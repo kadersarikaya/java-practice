@@ -1,0 +1,12 @@
+package Giris;
+
+import java.util.Scanner;
+
+public class InputAl {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Bir deger giriniz");
+        String b = input.nextLine();
+        System.out.println(b);
+    }
+}
