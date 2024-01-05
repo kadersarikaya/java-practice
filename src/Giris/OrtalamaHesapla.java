@@ -37,6 +37,6 @@ public class OrtalamaHesapla {
 
         boolean isPassed = sonuc>=60;
         System.out.println("Ortalamanız : " + Math.floor(sonuc));
-        System.out.println("Sınıf" + (isPassed ? "ı Geçtiniz" : "tan Kaldınız") );
+        System.out.println("Sınıf" + (isPassed ? "ı Geçtiniz" : "tan Kaldınız"));
     }
 }
