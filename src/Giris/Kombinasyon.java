@@ -21,12 +21,11 @@ public class Kombinasyon {
         scanner.close();
     }
     static int faktoriyel(int sayi) {
-        int result = 1;
-
-        for(int i=1; i<=sayi; i++) {
-            result*=i;
-        }
-        return result;
+      if(sayi==0 || sayi==1) {
+          return 1;
+      } else {
+          return sayi * faktoriyel(sayi - 1);
+      }
     }
     static int kombinasyon(int n, int r) {
         return faktoriyel(n) / (faktoriyel(r) * faktoriyel(n - r));
