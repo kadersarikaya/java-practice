@@ -43,6 +43,28 @@ public class Student {
         }
         printNote();
     }
+    void ortAgirlik(int sozluNote1, int sozluNote2, int sozluNote3,
+                    double perSozlu1, double perSozlu2, double perSozlu3) {
+
+        this.c1.sozluNote = sozluNote1;
+        this.c2.sozluNote = sozluNote2;
+        this.c3.sozluNote = sozluNote3;
+
+        this.c1.perSozlu = perSozlu1;
+        this.c2.perSozlu = perSozlu2;
+        this.c3.perSozlu = perSozlu3;
+
+        double tarihOrt = (this.c1.note * this.c1.perNote + sozluNote1 * perSozlu1);
+        double fizikOrt = (this.c2.note * this.c2.perNote + sozluNote2 * perSozlu2);
+        double bioOrt = (this.c3.note * this.c3.perNote + sozluNote3 * perSozlu3);
+
+        this.avarage = (tarihOrt + fizikOrt + bioOrt) / 3.0;
+
+        System.out.println("Tarih ort: " + tarihOrt);
+        System.out.println("Fizik ort: " + fizikOrt);
+        System.out.println("Bioloji ort: " + bioOrt);
+    }
+
     void printNote() {
         System.out.println(this.c1.name + "Notu: " + this.c1.note);
         System.out.println(this.c2.name + "Notu: " + this.c2.note);
