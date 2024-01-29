@@ -1,5 +1,7 @@
 package BoxMatch;
 
+import java.util.Random;
+
 public class Match {
     Fighter f1;
     Fighter f2;
@@ -11,6 +13,20 @@ public class Match {
         this.f2 = f2;
         this.maxWeight = maxWeight;
         this.minWeight = minWeight;
+
+        // Başlangıçta hangi dövüşçünün hamle yapacağını belirle (%50 olasılıkla)
+        Random random = new Random();
+        boolean f1Starts = random.nextBoolean();
+
+        if (f1Starts) {
+            System.out.println(f1.name + " ilk hamleyi yapıyor.");
+        } else {
+            System.out.println(f2.name + " ilk hamleyi yapıyor.");
+            // Eğer f2 başlıyorsa, dövüşçülerin yerini değiştir
+            Fighter temp = this.f1;
+            this.f1 = this.f2;
+            this.f2 = temp;
+        }
     }
 
     public void  run() {
@@ -45,7 +61,7 @@ public class Match {
         }
 
         if(this.f2.health == 0){
-            System.out.println(this.f1.name + "kazandı");
+            System.out.println(this.f1.name + " kazandı");
             return true;
         }
         return false;

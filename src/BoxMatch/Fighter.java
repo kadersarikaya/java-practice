@@ -34,7 +34,8 @@ public class Fighter {
         return foe.health - this.damage;
     }
     boolean isDodge(){
-        double randomNumber = Math.random() + 100; //0 - 100 random sayı üretir.
+        double randomNumber = Math.random()*100; //0 - 100 random sayı üretir.
         return randomNumber <= this.dodge;
     }
+
 }
